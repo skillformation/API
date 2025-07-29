@@ -63,7 +63,22 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        //Validation des données
+        $validateData=$request->validate([
+            'title'=>'required|string|max:255',
+            'content'=>'required',
+            'published'=>'boolean',
+        ]);
+        //Mettre a jour en fonction de l'id.
+        $article=Article::update($validateData)->find($article->id);
+
+        //Confirmation de article au format json
+        return response()->json([
+            'success'=>true,
+            'message'=>'Article modifier avec succés',
+            'article'=>$article
+            
+        ],201);
     }
 
     /**
