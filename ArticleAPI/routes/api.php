@@ -8,5 +8,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-//Select one
+//Select 1 article
 Route::get('article/{article}',[ArticleController::class,'show']);
+
+//Select liste des article
+Route::get('articles/',[ArticleController::class,'index']);

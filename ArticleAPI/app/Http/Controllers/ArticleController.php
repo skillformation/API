@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Afficher une liste article
      */
     public function index()
     {
-        //
+        $articles=Article::all();
+        return response()->json([
+            'success'=>true,
+            'articles'=>$articles
+            
+        ]);
     }
 
 
