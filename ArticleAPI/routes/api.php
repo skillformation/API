@@ -17,3 +17,6 @@ Route::get('articles/',[ArticleController::class,'index']);
 
 //Creation d'un article
 Route::post('article',[ArticleController::class,'store']);
+
+//Update d'un article
+Route::put('article/{article}',[ArticleController::class,'update']);
