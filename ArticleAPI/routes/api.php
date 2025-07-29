@@ -16,4 +16,4 @@ Route::get('articles/',[ArticleController::class,'index']);
 
 
 //Creation d'un article
-Route::get('article',[ArticleController::class,'store']);
+Route::post('article',[ArticleController::class,'store']);
