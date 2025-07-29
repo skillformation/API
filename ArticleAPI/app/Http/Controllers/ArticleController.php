@@ -15,13 +15,6 @@ class ArticleController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -32,20 +25,16 @@ class ArticleController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Afficher une donnée.
      */
     public function show(Article $article)
     {
-        //
+        return response()->json([
+            'success'=>true,
+            
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Article $article)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
