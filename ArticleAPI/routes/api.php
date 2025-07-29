@@ -20,3 +20,6 @@ Route::post('article',[ArticleController::class,'store']);
 
 //Update d'un article
 Route::put('article/{article}',[ArticleController::class,'update']);
+
+//Delete d'un article
+Route::delete('article/{article}',[ArticleController::class,'destroy']);

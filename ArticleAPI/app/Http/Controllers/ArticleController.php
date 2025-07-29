@@ -86,6 +86,13 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+       
+        //Mettre a jour en fonction de l'id.
+        $article->delete();
+        //Confirmation de article au format json
+        return response()->json([
+            'success'=>true,
+            'message'=>'Article supprimer avec succés',
+        ],201);
     }
 }
