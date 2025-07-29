@@ -70,7 +70,7 @@ class ArticleController extends Controller
             'published'=>'boolean',
         ]);
         //Mettre a jour en fonction de l'id.
-        $article=Article::update($validateData)->find($article->id);
+        $article->update($validateData);
 
         //Confirmation de article au format json
         return response()->json([
