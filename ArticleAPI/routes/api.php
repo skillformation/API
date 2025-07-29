@@ -13,3 +13,7 @@ Route::get('article/{article}',[ArticleController::class,'show']);
 
 //Select liste des article
 Route::get('articles/',[ArticleController::class,'index']);
+
+
+//Creation d'un article
+Route::get('article',[ArticleController::class,'store']);
