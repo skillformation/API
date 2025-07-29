@@ -22,11 +22,27 @@ class ArticleController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Creation d'une ressources de le storage.
      */
     public function store(Request $request)
     {
-        //
+        //Validation des données
+        $validateData=$request->validate([
+            'title'=>'required|string|max:255',
+            'content'=>'required',
+            'published'=>'boolean',
+        ]);
+        //Creation d'une article
+        $article=Article::create($validateData);
+
+        //Confirmation de article au format json
+        return response()->json([
+            'success'=>true,
+            'message'=>'Article crée avec succés',
+            'article'=>$article
+            
+        ],201);
+
     }
 
     /**
